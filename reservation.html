@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Webpage Title -->
+    <title>하이디라오 예약하기</title>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: auto;
+        }
+
+        .img {
+            background-image: url('https://img.wemep.co.kr/deal/4/373/4433734/0d60e420a74ed24447e11664df63549e8b2a0cf7.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 300px;
+        }
+
+        .info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1, h5 {
+            display: inline;
+        }
+
+        .reserve {
+            text-align: center;
+        }
+
+        .reserves {
+            margin-top: 100px;
+        }
+    </style>
+
+    <script>
+        function reserve() {
+            alert('예약이 완료되었습니다.');
+        }
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="img"></div>
+    <div class="info">
+        <h5>방문을 환영합니다!</h5>
+        <div>
+            <h1>하이디라오 예약 시작하기</h1>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">예약자 이름</span>
+            </div>
+            <input type="text" class="form-control" id="order-name">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">전화번호</span>
+            </div>
+            <input type="text" class="form-control" id="order-phone">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text">인원</label>
+            </div>
+            <select class="custom-select" id="order-count">
+                <option selected value=""> -- 인원을 선택하세요 (최대 4명까지 예약가능) --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">방문날짜</span>
+            </div>
+            <input type="date" class="form-control" id="order-month">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">방문시간</span>
+            </div>
+            <select class="custom-select" id="order-count">
+                <option selected value=""> -- 시간을 선택하세요 --</option>
+                <option value="1">11:00</option>
+                <option value="2">11:30</option>
+                <option value="3">12:00</option>
+                <option value="4">12:30</option>
+                <option value="5">13:00</option>
+                <option value="6">13:30</option>
+                <option value="7">14:00</option>
+                <option value="8">14:30</option>
+                <option value="9">15:00</option>
+                <option value="10">15:30</option>
+                <option value="11">16:00</option>
+                <option value="12">16:30</option>
+                <option value="13">17:00</option>
+                <option value="14">17:30</option>
+                <option value="15">18:00</option>
+                <option value="16">18:30</option>
+                <option value="17">19:00</option>
+                <option value="18">19:30</option>
+                <option value="19">20:00</option>
+                <option value="20">20:30</option>
+                <option value="21">21:00</option>
+                <option value="22">21:30</option>
+            </select>
+        </div>
+        <div class="reserve">
+            <button onclick="reserve()" type="button" class="btn btn-primary">예약하기</button>
+        </div>
+    </div>
+    <div class="reserves">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">전화번호</th>
+                <th scope="col">인원 수</th>
+                <th scope="col">방문시간</th>
+            </tr>
+            </thead>
+            <tbody id="orders-box">
+            <tr>
+                <td>박르탄</td>
+                <td>010-1234-5678</td>
+                <td>4</td>
+                <td>2020-09-20 14:00</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
